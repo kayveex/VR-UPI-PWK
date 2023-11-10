@@ -28,7 +28,7 @@
             <p>Virtual Campus Tour</p>
             <p>UPI Purwakarta</p>
 
-            <button type="button" class="btn btn-lg"><a href="#" class="text-white text-decoration-none">Start
+            <button type="button" class="btn btn-lg"><a href="/home" class="text-white text-decoration-none">Start
                     Tour</a></button>
         </section>
     </main>

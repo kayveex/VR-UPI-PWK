@@ -80,7 +80,7 @@
 
     <script>
         viewer = pannellum.viewer('panorama', {
-            "panorama": "/assets/img/footage/lobby_gedunglt4.jpg",
+            "panorama": "/assets/img/footage/Normal_School.jpg",
             "autoLoad": true,
             "showControls": false
         });
