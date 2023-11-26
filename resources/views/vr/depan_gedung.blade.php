@@ -16,68 +16,95 @@
     <script src="{{ asset('assets/js/script.js') }}"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="{{ asset('assets/pannellum/pannellum.js') }}"></script>
-
-
-
+    {{-- CSS for Navbars --}}
     <style>
-        #navbar {
-            background-color: #000;
-            /*whichever you want*/
-            opacity: 0.5;
-            filter: (opacity=50);
-            z-index: 3;
+        .navbar {
+            background-color: #214478;
+        }
+
+        .navbar img {
+            width: 70%;
+            margin-left: 10%;
+        }
+
+        #settingBtn {
+            position: absolute;
+            top: 6rem;
+            left: 1rem;
+            z-index: 100;
+        }
+
+        body {
+            background: black;
+        }
+
+        #iconsett {
+            height: 32px;
+            width: 32px;
         }
 
         #panorama {
-            width: 100vw;
-            height: 100vh;
-            margin-left: -16.75rem;
+            filter: brightness(0.9);
+        }
+
+        #informasi {
+            position: absolute;
+            bottom: 4rem;
+            right: 2rem;
+            z-index: 100;
+        }
+
+        #infocon {
+            height: 32px;
         }
     </style>
 </head>
 
 <body class="vh-100 overflow-hidden">
-    <div class="container-fluid">
-        <div class="row flex-nowrap">
-            <div id="navbar" class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 transparent">
-                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                    <a href="/"
-                        class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                        <span class="fs-5 d-none d-sm-inline">HOME</span>
-                    </a>
-                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
-                        id="menu">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link align-middle px-0">
-                                <i class="fs-4 bi-house"><img src="/assets/img/logo.png" alt="logo">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle text-white">
-                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Map UPI
-                                    PWK</span> </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link px-0 align-middle text-white">
-                                <i class="fs-4 bi-table"></i> <span
-                                    class="ms-1 d-none d-sm-inline">Recommendations</span></a>
-                        <li>
-                            <a href="#" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-people"></i> <span
-                                    class="ms-1 d-none d-sm-inline text-white">Informasi</span>
-                            </a>
-                        </li>
-                    </ul>
+    {{-- Navbar PSTI --}}
+    <nav class="navbar fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img src="/assets/img/logo.png" alt="Logo PSTI"></a>
+        </div>
+    </nav>
+    <!-- Button trigger setting -->
+    <button id="settingBtn" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#settings">
+        <img id="iconsett" src="/assets/img/sett.png" alt="">
+    </button>
 
+    <!-- Modal Setting -->
+    <div class="modal fade" id="settings" tabindex="-1" aria-labelledby="settings" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
                 </div>
             </div>
-
-            <div id="panorama">
-            </div>
-
         </div>
     </div>
 
+    {{-- Sidebar Informasi --}}
+    <button id="informasi" class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#informasiSide"
+        aria-controls="offcanvasRight"><img id="infocon" src="/assets/img/infobtn.png" alt=""></button>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="informasiSide" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            ...
+        </div>
+    </div>
+    {{-- Foto 360 nya --}}
+    <div id="panorama">
+    </div>
+
+    {{-- Script JS buat Foto 360 --}}
     <script>
         viewer = pannellum.viewer('panorama', {
             "panorama": "/assets/img/footage/Normal_School.jpg",
