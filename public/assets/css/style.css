@@ -1,0 +1,54 @@
+/* General Settings */
+* {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* General Settings End */
+
+#title-home {
+    font-weight: 800 ;
+    font-size: 64px;
+    width: 60% ;
+    text-align: center;
+}
+
+#home-btn {
+    font-weight: 600 ;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin-top: 2rem;
+    font-size: 32px;
+    border-radius: 25px;
+}
+
+body {
+    background-image: url("../img/mainpage_newoffice.jpg");
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+    background-color: #214478;
+}
+
+.navbar img {
+    width: 70%;
+    margin-left: 10%;
+}
+
+.btn {
+    background-color: #C28B5B;
+}
+
+.btn:hover {
+    background-color: #214478;
+}
+
